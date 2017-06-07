@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "725529238941",
+    "firebase_url": "https://e-kalyan-jharkhand.firebaseio.com",
+    "project_id": "e-kalyan-jharkhand",
+    "storage_bucket": "e-kalyan-jharkhand.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:725529238941:android:c5b94cf9044d4a17",
+        "android_client_info": {
+          "package_name": "com.kiu.ekalyan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "725529238941-aq4oif87s9su9vq5tt40d0ni0da905cg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLZnrgElGBhVi3-40LoresRSBmjyFzQCQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

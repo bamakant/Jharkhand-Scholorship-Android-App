@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@android:drawable/ic_menu_agenda"
+            android:title="About Us" />
+        <item
+            android:id="@+id/nav_help"
+            android:icon="@android:drawable/ic_menu_help"
+            android:title="Need Help" />
+        <item
+            android:id="@+id/nav_rate"
+            android:icon="@android:drawable/star_big_off"
+            android:title="Rate Us" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share App" />
+            <item
+                android:id="@+id/nav_feedback"
+                android:icon="@android:drawable/stat_notify_chat"
+                android:title="Feedback" />
+        </menu>
+    </item>
+
+</menu>

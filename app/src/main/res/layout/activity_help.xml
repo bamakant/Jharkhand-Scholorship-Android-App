@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context="com.kiu.ekalyan.HelpActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/simple_container_frame">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Notifications"
+                android:textColor="@color/colorPrimary"
+                android:textSize="25sp"
+                android:textStyle="italic"
+                android:padding="5dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="just check latest notifications from e-kalyan."
+                android:textSize="16sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:padding="5dp"
+                android:layout_marginBottom="5dp"/>
+        </LinearLayout>
+
+    </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/simple_container_frame">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Student Log In"
+                    android:textColor='@color/colorPrimary'
+                    android:textSize="25sp"
+                    android:textStyle="italic"
+                    android:padding="5dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="It directs you to Student log in page of E-kalyan web portal. Ask for user id and password where you need to select student name for log in using your name or you can choose any one option among them for log in."
+                    android:textSize="16sp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:padding="5dp"
+                    android:layout_marginBottom="5dp"/>
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/simple_container_frame">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Registration"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="25sp"
+                    android:textStyle="italic"
+                    android:padding="5dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="If you are a fresher( Who never applied for scholorship yet) then you need to register yourself first. You need to input some information which must be according to your matriculation certificates."
+                    android:textSize="16sp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:padding="5dp"
+                    android:layout_marginBottom="5dp"/>
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/simple_container_frame">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Forgot Password"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="25sp"
+                    android:textStyle="italic"
+                    android:padding="5dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="If you forgot your password then you can recover it from here. It redirects you to log in page of e-kalyan web portal where you need to click on FORGOT PASSWORD link reside just right to log in Button then ask for some necessary information about you, You have to fill them correctly then you can reset your log in password."
+                    android:textSize="16sp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:padding="5dp"
+                    android:layout_marginBottom="5dp"/>
+            </LinearLayout>
+
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/simple_container_frame">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Eligibility Criteria"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="italic"
+                    android:textSize="25sp"
+                    android:padding="5dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="You need to know about the eligibility criteria before applying for scholorship."
+                    android:textSize="16sp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:padding="5dp"
+                    android:layout_marginBottom="5dp"/>
+            </LinearLayout>
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/simple_container_frame">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Reason of rejection"
+                    android:textColor="@color/colorPrimary"
+                    android:padding="5dp"
+                    android:textStyle="italic"
+                    android:textSize="25dp"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:padding="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="You must know these reasons which may cause for  rejection of your scholarship application"/>
+            </LinearLayout>
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/simple_container_frame">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimary"
+                    android:padding="5dp"
+                    android:textStyle="italic"
+                    android:textSize="25sp"
+                    android:text="Instruction"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:padding="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="Here you will get a power point representation of complete process of applying."/>
+            </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/simple_container_frame">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimary"
+                    android:padding="5dp"
+                    android:textStyle="italic"
+                    android:textSize="25sp"
+                    android:text="Complaints"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:padding="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="If you have any issues then you can complain to E-kalyan office by filling this form."/>
+            </LinearLayout>
+        </FrameLayout>
+
+    </LinearLayout>
+</ScrollView>
