@@ -5,15 +5,22 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
 public class AboutUs extends AppCompatActivity {
+
+    InterstitialAd mInterstitialAd;
+
     /**
      * Whether or not the system UI should be auto-hidden after
      * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
@@ -89,6 +96,15 @@ public class AboutUs extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_about_us);
+
+        // InterstitialAd Ads
+
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-8605617979923403/5334432133");
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+
+        //@ Ads sectionend
+
 
         Button closebtn=(Button) findViewById(R.id.close_button);
         closebtn.setOnClickListener(new View.OnClickListener() {
@@ -168,5 +184,13 @@ public class AboutUs extends AppCompatActivity {
     private void delayedHide(int delayMillis) {
         mHideHandler.removeCallbacks(mHideRunnable);
         mHideHandler.postDelayed(mHideRunnable, delayMillis);
+    }
+
+    @Override
+    protected void onResume() {
+        if(mInterstitialAd.isLoaded()){
+            mInterstitialAd.show();
+        }else Log.d("TAG", "The Ad is not loaded.");
+        super.onResume();
     }
 }

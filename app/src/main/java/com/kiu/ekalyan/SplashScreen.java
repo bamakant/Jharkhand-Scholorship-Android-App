@@ -11,7 +11,7 @@ import java.util.TimerTask;
 
 public class SplashScreen extends Activity {
 
-    long delay = 3000;
+    long delay = 2000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -31,7 +31,8 @@
         android:padding="16dp"
         android:layout_gravity="center_horizontal"
         android:textSize="30sp"
-        android:text="e-Kalyan" />
+        android:text="e-Kalyan"
+        android:textStyle="italic"/>
 
     <ProgressBar
         android:layout_width="100dp"

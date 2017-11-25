@@ -2,10 +2,16 @@ package com.kiu.ekalyan;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+
 public class HelpActivity extends AppCompatActivity {
+
+    private InterstitialAd mInterstitialAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,6 +21,14 @@ public class HelpActivity extends AppCompatActivity {
         android.support.v7.app.ActionBar actionBar = getSupportActionBar();
         actionBar.setHomeButtonEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
+
+        // InterstitialAd Ads
+
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-8605617979923403/5334432133");
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+
+        //@ Ads sectionend
 
     }
 
@@ -40,6 +54,14 @@ public class HelpActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onResume() {
+        if(mInterstitialAd.isLoaded()){
+            mInterstitialAd.show();
+        }else Log.d("TAG", "The Ad is not loaded.");
+        super.onResume();
     }
 
 }

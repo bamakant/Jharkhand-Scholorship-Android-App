@@ -26,6 +26,9 @@ import android.widget.Toast;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.reward.RewardItem;
+import com.google.android.gms.ads.reward.RewardedVideoAd;
+import com.google.android.gms.ads.reward.RewardedVideoAdListener;
 
 
 public class MainActivity extends AppCompatActivity
@@ -36,6 +39,7 @@ public class MainActivity extends AppCompatActivity
     String link;
     boolean isConnected;
     TextView textView;
+    private RewardedVideoAd mAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +51,48 @@ public class MainActivity extends AppCompatActivity
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
+        // Use an activity context to get the rewarded video instance.
+        mAd = MobileAds.getRewardedVideoAdInstance(this);
+        mAd.loadAd("ca-app-pub-8605617979923403/1971392886", new AdRequest.Builder().build());
+
+        mAd.setRewardedVideoAdListener(new RewardedVideoAdListener() {
+            @Override
+            public void onRewardedVideoAdLoaded() {
+
+            }
+
+            @Override
+            public void onRewardedVideoAdOpened() {
+
+            }
+
+            @Override
+            public void onRewardedVideoStarted() {
+
+            }
+
+            @Override
+            public void onRewardedVideoAdClosed() {
+
+            }
+
+            @Override
+            public void onRewarded(RewardItem rewardItem) {
+
+            }
+
+            @Override
+            public void onRewardedVideoAdLeftApplication() {
+
+            }
+
+            @Override
+            public void onRewardedVideoAdFailedToLoad(int i) {
+
+            }
+        });
+
+        //@ Ads section end
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -112,8 +158,16 @@ public class MainActivity extends AppCompatActivity
         frame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new AlertDialog.Builder(MainActivity.this).setMessage("Registration Closed For This Session").setNegativeButton("OK", null).show();
+               // new AlertDialog.Builder(MainActivity.this).setMessage("Registration Closed For This Session").setNegativeButton("OK", null).show();
 
+                if (isConnected) {
+                    i = new Intent(MainActivity.this, Web_container.class);
+                    link = "http://ekalyan.cgg.gov.in/studentLogin.do";
+                    i.putExtra("web_link", link);
+                    startActivity(i);
+                } else {
+                    new AlertDialog.Builder(MainActivity.this).setMessage("Internet Connection Not Available").setNegativeButton("OK", null).show();
+                }
             }
         });
 
@@ -207,7 +261,7 @@ public class MainActivity extends AppCompatActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
+        //noinspection S@Override
         if (id == R.id.exit) {
             this.finishAffinity();
             return true;
@@ -243,7 +297,7 @@ public class MainActivity extends AppCompatActivity
             intent.setType("text/plain");
             intent.putExtra(Intent.EXTRA_TEXT, "Hey guys check out this app of our e-kalyan web portal.\nhttps://play.google.com/store/apps/details?id=com.kiu.ekalyan");
             intent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Hey guys check out this app of e-Kalyan Jharkhand web portal.");
-            startActivity(Intent.createChooser(intent, "Share"));
+            startActivity(Intent.createChooser(intent, "Share App"));
         } else if (id == R.id.nav_feedback) {
 
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("mailto:" + "kiusoftech@gmail.com"));
@@ -260,5 +314,12 @@ public class MainActivity extends AppCompatActivity
 
     }
 
+    @Override
+    public void onDestroy() {
+        if (mAd.isLoaded()) {
+            mAd.show();
+        }
+        super.onDestroy();
+    }
 
 }

@@ -12,13 +12,19 @@ import android.view.MenuItem;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.reward.RewardItem;
+import com.google.android.gms.ads.reward.RewardedVideoAd;
+import com.google.android.gms.ads.reward.RewardedVideoAdListener;
+
 public class Web_container extends AppCompatActivity {
 
     private WebView mywebview;
     public String web_url;
     Intent i;
     ProgressDialog progressDialog;
-
+    private RewardedVideoAd mAd;
 
     //@it navigate the webview using history of visiting
     @Override
@@ -43,6 +49,49 @@ public class Web_container extends AppCompatActivity {
         android.support.v7.app.ActionBar actionBar = getSupportActionBar();
         actionBar.setHomeButtonEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
+
+        // Use an activity context to get the rewarded video instance.
+        mAd = MobileAds.getRewardedVideoAdInstance(this);
+        mAd.loadAd("ca-app-pub-8605617979923403/1971392886", new AdRequest.Builder().build());
+
+        mAd.setRewardedVideoAdListener(new RewardedVideoAdListener() {
+            @Override
+            public void onRewardedVideoAdLoaded() {
+
+            }
+
+            @Override
+            public void onRewardedVideoAdOpened() {
+
+            }
+
+            @Override
+            public void onRewardedVideoStarted() {
+
+            }
+
+            @Override
+            public void onRewardedVideoAdClosed() {
+
+            }
+
+            @Override
+            public void onRewarded(RewardItem rewardItem) {
+
+            }
+
+            @Override
+            public void onRewardedVideoAdLeftApplication() {
+
+            }
+
+            @Override
+            public void onRewardedVideoAdFailedToLoad(int i) {
+
+            }
+        });
+
+        //@ Ads section end
 
         //@linking xml webview to java code
         mywebview = (WebView) findViewById(R.id.webview);
@@ -81,6 +130,10 @@ public class Web_container extends AppCompatActivity {
         mywebview.getSettings().setSupportZoom(true);
         mywebview.getSettings().setBuiltInZoomControls(true);
 
+        //TO manage popup windows
+        mywebview.getSettings().setAllowFileAccess(true);
+        mywebview.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
+
     }
 
 
@@ -114,6 +167,14 @@ public class Web_container extends AppCompatActivity {
     protected void onStart() {
         new AlertDialog.Builder(Web_container.this).setMessage("This is ekalyan.cgg.gov.in web portal of jharkhand goverment. You can easily Zoom it by your finger touch to get a better access.").setNegativeButton("OK",null).show();
         super.onStart();
+    }
+
+    @Override
+    public void onDestroy() {
+        if (mAd.isLoaded()) {
+            mAd.show();
+        }
+        super.onDestroy();
     }
 }
 
