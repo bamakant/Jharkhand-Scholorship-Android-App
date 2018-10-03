@@ -11,5 +11,25 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
 
     <string name="banner_ad_unit_id">ca-app-pub-8605617979923403/8026801171</string>
+    <string name="interntitial_ad_id">ca-app-pub-8605617979923403/5334432133</string>
+    <string name="video_ad">ca-app-pub-8605617979923403/1971392886</string>
+
+    <string name="about_ekalyan">The Welfare Department running various schemes for the welfare of the backward classes and the SC/ST. A step towards achieve speedy, transparent and accountable governance. The system links all welfare departments, treasury, databases of Secondary Schools Certificate (SSC), colleges and banks to disburse scholarships. Processing of students\' applications for scholarships, sanctioning and passing of bills for disbursement are enabled in the system.</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="disclaimer">Disclaimer</string>
+    <string name="version_2_0">Version 2.0</string>
+    <string name="e_kalyan">e-Kalyan</string>
+    <string name="exit">Exit</string>
+    <string name="print">Print</string>
+    <string name="reload">Reload</string>
+    <string name="print_complete">Print Done</string>
+    <string name="print_failed">Print Failed</string>
+    <string name="about">About</string>
+    <string name="need_help">Need Help</string>
+    <string name="rate_us">Rate Us</string>
+    <string name="more_apps">More Apps</string>
+    <string name="communicate">Communicate</string>
+    <string name="share_app">Share App</string>
+    <string name="feedback">Feedback</string>
 
 </resources>

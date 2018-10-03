@@ -4,100 +4,98 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
-    tools:context="com.kiu.ekalyan.Eligibility">
+    tools:context="com.kiu.ekalyan.EligibilityActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
-        <FrameLayout
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_margin="5dp"
-            android:background="@drawable/simple_container_frame">
-            <LinearLayout
+            android:background="@drawable/simple_container_frame"
+            android:orientation="vertical">
+
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="College Eligible"
-            android:textColor="@color/colorPrimary"
-            android:textSize="25sp"
-            android:textStyle="italic|bold"
-            android:padding="5dp"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="All institutions in jharkhand recognized by Goverment of Jharkhand/Competent authority. "
-            android:textSize="16sp"
-            android:textColor="@color/colorPrimaryDark"
-            android:padding="5dp"
-            android:layout_marginBottom="5dp"/>
-            </LinearLayout>
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="College Eligible"
+                android:textColor="@color/colorPrimary"
+                android:textSize="25sp"
+                android:textStyle="italic|bold" />
 
-        </FrameLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:padding="5dp"
+                android:text="All institutions in jharkhand recognized by Goverment of Jharkhand/Competent authority. "
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="16sp" />
+        </LinearLayout>
 
-        <FrameLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_margin="5dp"
-            android:background="@drawable/simple_container_frame">
-            <LinearLayout
+            android:background="@drawable/simple_container_frame"
+            android:orientation="vertical">
+
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Student Eligible"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="25sp"
-                    android:textStyle="bold|italic"
-                    android:padding="5dp"/>
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="Student Eligible"
+                android:textColor="@color/colorPrimary"
+                android:textSize="25sp"
+                android:textStyle="bold|italic" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:text="1. Student must be of Jharkhand state."
-                    android:padding="5dp"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:text="2. Student must be either Schedule Tribe(ST) or Schedule Caste(SC) or Backward Class(BC)."
-                    android:padding="5dp"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:text="3. Students Annual Family Income from all sources should not exceed as per the list given below."
-                    android:padding="5dp"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:layout_marginLeft="10dp"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:text="a) Schedule Tribe(ST) or Schedule Caste(SC) Rs. 2,50,000/-"
-                    android:padding="5dp"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:layout_marginLeft="10dp"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:text="b) Backward Class (BC) Rs. 1,00,000/-"
-                    android:padding="5dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="1. Student must be of Jharkhand state."
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="16sp" />
 
-            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="2. Student must be either Schedule Tribe(ST) or Schedule Caste(SC) or Backward Class(BC)."
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="16sp" />
 
-        </FrameLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="3. Students Annual Family Income from all sources should not exceed as per the list given below."
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:padding="5dp"
+                android:text="a) Schedule Tribe(ST) or Schedule Caste(SC) Rs. 2,50,000/-"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:padding="5dp"
+                android:text="b) Backward Class (BC) Rs. 1,00,000/-"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="16sp" />
+
+        </LinearLayout>
 
     </LinearLayout>
 

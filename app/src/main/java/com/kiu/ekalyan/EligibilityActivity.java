@@ -6,10 +6,11 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 
-public class Eligibility extends AppCompatActivity {
+public class EligibilityActivity extends AppCompatActivity {
 
     private InterstitialAd mInterstitialAd;
 
@@ -25,10 +26,14 @@ public class Eligibility extends AppCompatActivity {
         // InterstitialAd Ads
 
         mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-8605617979923403/5334432133");
+        mInterstitialAd.setAdUnitId(getResources().getString(R.string.interntitial_ad_id));
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
-
-        //@ Ads sectionend
+        mInterstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdClosed() {
+                exitActivity();
+            }
+        });
 
     }
 
@@ -44,23 +49,29 @@ public class Eligibility extends AppCompatActivity {
     //for back button and option menu item click event
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
         switch (item.getItemId()) {
             case android.R.id.home:
-                this.finish();
+                if (mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+                } else {
+                    exitActivity();
+                }
                 return true;
             case R.id.exit:
                 this.finishAffinity();
                 return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
     @Override
-    protected void onResume() {
-        if(mInterstitialAd.isLoaded()){
+    public void onBackPressed() {
+        if (mInterstitialAd.isLoaded()) {
             mInterstitialAd.show();
-        }else Log.d("TAG", "The Ad is not loaded.");
-        super.onResume();
+        } else {
+            exitActivity();
+        }
+    }
+    private void exitActivity() {
+        this.finish();
     }
 }

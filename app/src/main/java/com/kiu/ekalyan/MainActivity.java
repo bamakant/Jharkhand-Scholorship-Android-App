@@ -1,14 +1,11 @@
 package com.kiu.ekalyan;
 
-import android.app.DialogFragment;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -21,11 +18,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.reward.RewardItem;
 import com.google.android.gms.ads.reward.RewardedVideoAd;
 import com.google.android.gms.ads.reward.RewardedVideoAdListener;
@@ -46,14 +41,9 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        MobileAds.initialize(getApplicationContext(), "ca-app-pub-3940256099942544~3347511713");
-        AdView mAdView = (AdView) findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-
         // Use an activity context to get the rewarded video instance.
         mAd = MobileAds.getRewardedVideoAdInstance(this);
-        mAd.loadAd("ca-app-pub-8605617979923403/1971392886", new AdRequest.Builder().build());
+        mAd.loadAd(getResources().getString(R.string.video_ad), new AdRequest.Builder().build());
 
         mAd.setRewardedVideoAdListener(new RewardedVideoAdListener() {
             @Override
@@ -88,6 +78,11 @@ public class MainActivity extends AppCompatActivity
 
             @Override
             public void onRewardedVideoAdFailedToLoad(int i) {
+
+            }
+
+            @Override
+            public void onRewardedVideoCompleted() {
 
             }
         });
@@ -128,7 +123,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 if (isConnected) {
-                    i = new Intent(MainActivity.this, Web_container.class);
+                    i = new Intent(MainActivity.this, WebContainerActivity.class);
                     link = "http://ekalyan.cgg.gov.in/Login.do";
                     i.putExtra("web_link", link);
                     startActivity(i);
@@ -144,7 +139,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 if (isConnected) {
-                    i = new Intent(MainActivity.this, Web_container.class);
+                    i = new Intent(MainActivity.this, WebContainerActivity.class);
                     link = "http://ekalyan.cgg.gov.in/studentLogin.do";
                     i.putExtra("web_link", link);
                     startActivity(i);
@@ -161,7 +156,7 @@ public class MainActivity extends AppCompatActivity
                // new AlertDialog.Builder(MainActivity.this).setMessage("Registration Closed For This Session").setNegativeButton("OK", null).show();
 
                 if (isConnected) {
-                    i = new Intent(MainActivity.this, Web_container.class);
+                    i = new Intent(MainActivity.this, WebContainerActivity.class);
                     link = "http://ekalyan.cgg.gov.in/studentLogin.do";
                     i.putExtra("web_link", link);
                     startActivity(i);
@@ -177,7 +172,7 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
 
                 if (isConnected) {
-                    i = new Intent(MainActivity.this, Web_container.class);
+                    i = new Intent(MainActivity.this, WebContainerActivity.class);
                     link = "http://ekalyan.cgg.gov.in/studentLogin.do";
                     i.putExtra("web_link", link);
                     startActivity(i);
@@ -191,7 +186,7 @@ public class MainActivity extends AppCompatActivity
         frame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                i = new Intent(MainActivity.this, Eligibility.class);
+                i = new Intent(MainActivity.this, EligibilityActivity.class);
                 startActivity(i);
             }
         });
@@ -200,7 +195,7 @@ public class MainActivity extends AppCompatActivity
         frame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                i = new Intent(MainActivity.this, ReasonOfRejection.class);
+                i = new Intent(MainActivity.this, ReasonOfRejectionActivity.class);
                 startActivity(i);
             }
         });
@@ -210,9 +205,11 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 if (isConnected) {
-                    i = new Intent(MainActivity.this, Web_container.class);
+                   i = new Intent(MainActivity.this, WebContainerActivity.class);
                     link = "https://drive.google.com/file/d/0B6CJIpKRi5gdbm1VanIzMU53OUE/view?usp=sharing";
+                    //link = "https://firebasestorage.googleapis.com/v0/b/sbte-jharkhand.appspot.com/o/b.pdf?alt=media&token=4e89d98b-6fa2-4752-bc6b-9e1a14793db9";
                     i.putExtra("web_link", link);
+                    i.setData(Uri.parse(link));
                     startActivity(i);
                 } else {
                     new AlertDialog.Builder(MainActivity.this).setMessage("Internet Connection Not Available").setNegativeButton("OK", null).show();
@@ -225,7 +222,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 if (isConnected) {
-                    i = new Intent(MainActivity.this, Web_container.class);
+                    i = new Intent(MainActivity.this, WebContainerActivity.class);
                     link = "http://ekalyan.cgg.gov.in/registerComplaint.do";
                     i.putExtra("web_link", link);
                     startActivity(i);
@@ -277,14 +274,11 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_about) {
-
-            Intent about = new Intent(MainActivity.this, AboutUs.class);
+            Intent about = new Intent(MainActivity.this, AboutActivity.class);
             startActivity(about);
-
         } else if (id == R.id.nav_help) {
             i = new Intent(MainActivity.this, HelpActivity.class);
             startActivity(i);
-
         } else if (id == R.id.nav_rate) {
             /*String url="http://ekalyan.cgg.gov.in/Login.do";
             Intent in=new Intent(Intent.ACTION_VIEW);
@@ -292,7 +286,13 @@ public class MainActivity extends AppCompatActivity
             startActivity(in);*/
             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.kiu.ekalyan")));
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_more_apps) {
+            try {
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://search?q=pub:Kiusoftech")));
+            } catch (android.content.ActivityNotFoundException anfe) {
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://play.google.com/store/apps/developer?id=Kiusoftech")));
+            }
+        }else if (id == R.id.nav_share) {
             Intent intent = new Intent(Intent.ACTION_SEND);
             intent.setType("text/plain");
             intent.putExtra(Intent.EXTRA_TEXT, "Hey guys check out this app of our e-kalyan web portal.\nhttps://play.google.com/store/apps/details?id=com.kiu.ekalyan");

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_print"
+        android:title="@string/print"
+        android:icon="@drawable/baseline_print_white_18dp"
+        app:showAsAction="ifRoom"
+        />
+    <item
+        android:id="@+id/reload"
+        android:title="@string/reload"
+        android:icon="@drawable/baseline_refresh_white_18dp"
+        app:showAsAction="ifRoom"/>
+
+</menu>
